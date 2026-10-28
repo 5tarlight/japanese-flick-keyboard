@@ -116,7 +116,7 @@ rp {
   isolation: isolate;
 }
 .app-header {
-  height: 82px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -177,7 +177,7 @@ rp {
   padding: 0 24px 130px;
 }
 .welcome {
-  padding: 27px 0 26px;
+  padding: 14px 0 18px;
   position: relative;
   overflow: hidden;
 }
@@ -187,7 +187,7 @@ rp {
   justify-content: space-between;
   font-size: 12px;
   color: #8c879f;
-  margin-bottom: 11px;
+  margin-bottom: 9px;
 }
 .streak-badge {
   color: #ba855b;
@@ -203,8 +203,8 @@ rp {
   z-index: 1;
 }
 .welcome h1 {
-  font-size: 33px;
-  line-height: 1.4;
+  font-size: 31px;
+  line-height: 1.35;
   letter-spacing: -1.5px;
   font-weight: 750;
   position: relative;
@@ -218,16 +218,18 @@ rp {
   line-height: 1.7;
   color: #8a869b;
   letter-spacing: -0.25px;
-  margin-top: 13px;
+  margin-top: 10px;
   position: relative;
   z-index: 1;
 }
 .kana-art {
   position: absolute;
   right: 8px;
-  top: 65px;
+  top: 45px;
   width: 128px;
   height: 126px;
+  transform: scale(0.88);
+  transform-origin: right top;
   pointer-events: none;
 }
 .kana-art > span:not(.art-dot) {
@@ -294,9 +296,9 @@ rp {
   align-items: center;
   border: 1px solid var(--line);
   border-radius: 15px;
-  padding: 16px;
+  padding: 14px;
   background: var(--paper);
-  margin-bottom: 29px;
+  margin-bottom: 23px;
 }
 .goal-icon {
   background: #f2effc;
@@ -368,7 +370,7 @@ rp {
   margin-bottom: 15px;
 }
 .mode-tabs button {
-  min-height: 76px;
+  min-height: 70px;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -402,7 +404,7 @@ rp {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 15px;
 }
 .course-intro h3 {
   font-size: 16px;
