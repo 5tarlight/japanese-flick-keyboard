@@ -54,6 +54,26 @@ const groups: Record<string, string> = {
 飴|あめ|사탕|candy
 氷|こおり|얼음|ice
 蜂蜜|はちみつ|꿀|honey
+トマト|とまと|토마토|tomato
+キャベツ|きゃべつ|양배추|cabbage
+レタス|れたす|상추·양상추|lettuce
+南瓜|かぼちゃ|호박|pumpkin
+茄子|なす|가지|eggplant
+葱|ねぎ|파|green onion
+生姜|しょうが|생강|ginger
+大蒜|にんにく|마늘|garlic
+鶏肉|とりにく|닭고기|chicken meat
+豚肉|ぶたにく|돼지고기|pork
+牛肉|ぎゅうにく|소고기|beef
+ヨーグルト|よーぐると|요구르트|yogurt
+バター|ばたー|버터|butter
+チーズ|ちーず|치즈|cheese
+コーヒー|こーひー|커피|coffee
+緑茶|りょくちゃ|녹차|green tea
+紅茶|こうちゃ|홍차|black tea
+汁|しる|국물|broth
+小麦|こむぎ|밀|wheat
+麺|めん|면|noodles
 `,
   자연: `
 空|そら|하늘|sky
@@ -96,6 +116,26 @@ const groups: Record<string, string> = {
 景色|けしき|경치|scenery
 日陰|ひかげ|그늘|shade
 夕日|ゆうひ|석양|setting sun
+朝日|あさひ|아침 해|morning sun
+夕焼け|ゆうやけ|저녁노을|sunset glow
+霧|きり|안개|fog
+露|つゆ|이슬|dew
+霜|しも|서리|frost
+氷河|ひょうが|빙하|glacier
+大地|だいち|대지|land; earth
+火山|かざん|화산|volcano
+砂漠|さばく|사막|desert
+草原|そうげん|초원|grassland
+滝|たき|폭포|waterfall
+泉|いずみ|샘|spring; fountain
+小川|おがわ|시냇물|stream
+岸|きし|기슭|shore; bank
+水平線|すいへいせん|수평선|sea horizon
+地平線|ちへいせん|지평선|land horizon
+満月|まんげつ|보름달|full moon
+新月|しんげつ|삭(신월)|new moon
+蕾|つぼみ|꽃봉오리|flower bud
+向日葵|ひまわり|해바라기|sunflower
 `,
   '집과 물건': `
 家|いえ|집|house
@@ -138,6 +178,26 @@ const groups: Record<string, string> = {
 包丁|ほうちょう|식칼|kitchen knife
 冷蔵庫|れいぞうこ|냉장고|refrigerator
 洗濯機|せんたくき|세탁기|washing machine
+電話|でんわ|전화|telephone
+携帯電話|けいたいでんわ|휴대전화|mobile phone
+充電器|じゅうでんき|충전기|charger
+電池|でんち|건전지|battery
+掃除機|そうじき|청소기|vacuum cleaner
+扇風機|せんぷうき|선풍기|electric fan
+暖房|だんぼう|난방|heating
+冷房|れいぼう|냉방|air conditioning
+風呂|ふろ|목욕·욕조|bath
+浴室|よくしつ|욕실|bathroom
+洗面所|せんめんじょ|세면실|washroom
+食器|しょっき|식기|tableware
+湯呑み|ゆのみ|찻잔|teacup
+まな板|まないた|도마|cutting board
+缶|かん|깡통|can
+瓶|びん|병|bottle
+箱|はこ|상자|box
+袋|ふくろ|봉투·주머니|bag; sack
+紐|ひも|끈|string
+鋏|はさみ|가위|scissors
 `,
   '사람과 몸': `
 私|わたし|나|I; me
@@ -175,6 +235,26 @@ const groups: Record<string, string> = {
 髪|かみ|머리카락|hair
 肩|かた|어깨|shoulder
 背中|せなか|등|back
+夫|おっと|남편|my husband
+妻|つま|아내|my wife
+夫婦|ふうふ|부부|married couple
+親戚|しんせき|친척|relative
+従兄弟|いとこ|사촌|cousin
+赤ちゃん|あかちゃん|아기|baby
+双子|ふたご|쌍둥이|twins
+息子|むすこ|아들|son
+娘|むすめ|딸|daughter
+先輩|せんぱい|선배|senior colleague or student
+後輩|こうはい|후배|junior colleague or student
+同僚|どうりょう|동료|coworker
+仲間|なかま|동료·친구|companion; teammate
+相手|あいて|상대|partner; other person
+お客さん|おきゃくさん|손님|guest; customer
+首|くび|목|neck
+腕|うで|팔|arm
+肘|ひじ|팔꿈치|elbow
+膝|ひざ|무릎|knee
+胸|むね|가슴|chest
 `,
   '장소와 여행': `
 駅|えき|역|station
@@ -217,6 +297,26 @@ const groups: Record<string, string> = {
 船|ふね|배|boat; ship
 旅行|りょこう|여행|travel
 予約|よやく|예약|reservation
+バス|ばす|버스|bus
+地下鉄|ちかてつ|지하철|subway
+新幹線|しんかんせん|신칸센|bullet train
+車|くるま|자동차|car
+タクシー|たくしー|택시|taxi
+乗り場|のりば|승강장·타는 곳|boarding point
+改札|かいさつ|개찰구|ticket gate
+ホーム|ほーむ|승강장|train platform
+運賃|うんちん|운임|fare
+片道|かたみち|편도|one way
+往復|おうふく|왕복|round trip
+乗り換え|のりかえ|환승|transfer
+駐車場|ちゅうしゃじょう|주차장|parking lot
+歩道|ほどう|보도|sidewalk
+商店街|しょうてんがい|상점가|shopping street
+スーパー|すーぱー|슈퍼마켓|supermarket
+コンビニ|こんびに|편의점|convenience store
+薬局|やっきょく|약국|pharmacy
+交番|こうばん|파출소|police box
+市役所|しやくしょ|시청|city hall
 `,
   '시간과 일상': `
 今日|きょう|오늘|today
@@ -254,6 +354,26 @@ const groups: Record<string, string> = {
 料理|りょうり|요리|cooking; dish
 運動|うんどう|운동|exercise
 睡眠|すいみん|수면|sleep
+月曜日|げつようび|월요일|Monday
+火曜日|かようび|화요일|Tuesday
+水曜日|すいようび|수요일|Wednesday
+木曜日|もくようび|목요일|Thursday
+金曜日|きんようび|금요일|Friday
+土曜日|どようび|토요일|Saturday
+日曜日|にちようび|일요일|Sunday
+午前|ごぜん|오전|morning; a.m.
+午後|ごご|오후|afternoon; p.m.
+正午|しょうご|정오|noon
+深夜|しんや|심야|late at night
+平日|へいじつ|평일|weekday
+祝日|しゅくじつ|공휴일|public holiday
+連休|れんきゅう|연휴|consecutive holidays
+今月|こんげつ|이번 달|this month
+来月|らいげつ|다음 달|next month
+先月|せんげつ|지난달|last month
+一昨日|おととい|그저께|the day before yesterday
+明後日|あさって|모레|the day after tomorrow
+季節|きせつ|계절|season
 `,
   동작: `
 行く|いく|가다|go
@@ -306,6 +426,26 @@ const groups: Record<string, string> = {
 選ぶ|えらぶ|고르다|choose
 始める|はじめる|시작하다|begin
 終わる|おわる|끝나다|end
+会う|あう|만나다|meet
+乗る|のる|타다|ride; board
+降りる|おりる|내리다|get off
+着く|つく|도착하다|arrive
+出発する|しゅっぱつする|출발하다|depart
+泊まる|とまる|숙박하다|stay overnight
+借りる|かりる|빌리다|borrow
+貸す|かす|빌려주다|lend
+返す|かえす|돌려주다|return something
+集める|あつめる|모으다|collect
+並ぶ|ならぶ|줄 서다|line up
+並べる|ならべる|나란히 놓다|arrange in a row
+直す|なおす|고치다|repair; correct
+治る|なおる|낫다|recover; heal
+手伝う|てつだう|돕다|help
+働く|はたらく|일하다|work
+休む|やすむ|쉬다|rest
+続ける|つづける|계속하다|continue
+比べる|くらべる|비교하다|compare
+決める|きめる|정하다|decide
 `,
   '상태와 느낌': `
 大きい|おおきい|크다|big
@@ -348,6 +488,26 @@ const groups: Record<string, string> = {
 眠い|ねむい|졸리다|sleepy
 丸い|まるい|둥글다|round
 柔らかい|やわらかい|부드럽다|soft
+美しい|うつくしい|아름답다|beautiful
+可愛い|かわいい|귀엽다|cute
+面白い|おもしろい|재미있다|interesting
+つまらない|つまらない|지루하다|boring
+恥ずかしい|はずかしい|부끄럽다|embarrassed; shy
+懐かしい|なつかしい|그립다|nostalgic
+羨ましい|うらやましい|부럽다|envious
+厳しい|きびしい|엄격하다|strict
+細い|ほそい|가늘다|thin; slender
+太い|ふとい|굵다|thick
+浅い|あさい|얕다|shallow
+深い|ふかい|깊다|deep
+硬い|かたい|딱딱하다|hard
+臭い|くさい|냄새가 고약하다|smelly
+うるさい|うるさい|시끄럽다|noisy
+静か|しずか|조용함|quiet
+賑やか|にぎやか|번화함·활기참|lively
+便利|べんり|편리함|convenient
+不便|ふべん|불편함|inconvenient
+簡単|かんたん|간단함|simple; easy
 `,
   '취미와 배움': `
 本|ほん|책|book
@@ -385,6 +545,26 @@ const groups: Record<string, string> = {
 黒|くろ|검정|black
 緑|みどり|초록|green
 紫|むらさき|보라|purple
+小説|しょうせつ|소설|novel
+物語|ものがたり|이야기|story
+詩|し|시|poem
+漫画|まんが|만화|comic; manga
+舞台|ぶたい|무대|stage
+演劇|えんげき|연극|theater; play
+美術|びじゅつ|미술|fine arts
+歴史|れきし|역사|history
+地理|ちり|지리|geography
+数学|すうがく|수학|mathematics
+科学|かがく|과학|science
+授業|じゅぎょう|수업|class; lesson
+宿題|しゅくだい|숙제|homework
+試験|しけん|시험|exam
+教室|きょうしつ|교실|classroom
+黒板|こくばん|칠판|blackboard
+教科書|きょうかしょ|교과서|textbook
+筆箱|ふでばこ|필통|pencil case
+定規|じょうぎ|자|ruler
+地球儀|ちきゅうぎ|지구본|globe
 `,
   동물: `
 猫|ねこ|고양이|cat
@@ -422,6 +602,26 @@ const groups: Record<string, string> = {
 海老|えび|새우|shrimp
 蟹|かに|게|crab
 貝|かい|조개|shellfish
+鶏|にわとり|닭|chicken
+鴨|かも|오리|duck
+鳩|はと|비둘기|pigeon
+雀|すずめ|참새|sparrow
+燕|つばめ|제비|swallow
+烏|からす|까마귀|crow
+鷹|たか|매|hawk
+鶴|つる|학|crane
+梟|ふくろう|부엉이|owl
+白鳥|はくちょう|백조|swan
+金魚|きんぎょ|금붕어|goldfish
+鯉|こい|잉어|carp
+鰯|いわし|정어리|sardine
+鯖|さば|고등어|mackerel
+秋刀魚|さんま|꽁치|Pacific saury
+鰻|うなぎ|장어|eel
+昆虫|こんちゅう|곤충|insect
+鈴虫|すずむし|방울벌레|bell cricket
+毛虫|けむし|털벌레|hairy caterpillar
+かたつむり|かたつむり|달팽이|snail
 `,
 };
 

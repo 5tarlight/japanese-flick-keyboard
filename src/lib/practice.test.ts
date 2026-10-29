@@ -21,10 +21,13 @@ import type { PracticeRecord } from './storage';
 afterEach(() => vi.unstubAllGlobals());
 
 describe('original practice library', () => {
-  it('contains more than 500 distinct words and texts with both translations', () => {
-    expect(contentCount).toBeGreaterThanOrEqual(500);
-    expect(words.length).toBe(400);
-    expect(sentences.length).toBe(160);
+  it('contains more than 900 distinct words and texts with both translations', () => {
+    expect(contentCount).toBeGreaterThanOrEqual(900);
+    expect(words.length).toBe(600);
+    expect(sentences.length).toBe(300);
+    for (const length of ['short', 'middle', 'long']) {
+      expect(sentences.filter((item) => item.length === length)).toHaveLength(100);
+    }
     expect(passages.length).toBe(12);
     expect(new Set(library.map((item) => item.id)).size).toBe(library.length);
     expect(

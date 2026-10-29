@@ -42,6 +42,8 @@ import {
   readingOf,
 } from './lib/practice';
 import type { Course } from './lib/practice';
+import { compareAnswer } from './lib/answerDiff';
+import type { AnswerDiff } from './lib/answerDiff';
 import { loadData, saveData, streak } from './lib/storage';
 import type { PracticeRecord, SavedData, Settings } from './lib/storage';
 import { useViewport } from './hooks/useViewport';
@@ -551,7 +553,9 @@ function Practice({
 }) {
   const [index, setIndex] = useState(0);
   const [value, setValue] = useState('');
-  const [feedback, setFeedback] = useState<'idle' | 'wrong' | 'correct' | 'skipped'>('idle');
+  const [feedback, setFeedback] = useState<'idle' | 'wrong' | 'skipped'>('idle');
+  const [difference, setDifference] = useState<AnswerDiff | null>(null);
+  const [announcement, setAnnouncement] = useState('');
   const [stats, setStats] = useState({ correct: 0, skipped: 0, attempts: 0, characters: 0 });
   const [exitDialog, setExitDialog] = useState(false);
   const [fullText, setFullText] = useState(false);
@@ -562,7 +566,7 @@ function Practice({
   const started = useRef<number | null>(null);
   const completed = useRef(false);
   const item = run.items[index];
-  const settled = feedback === 'correct' || feedback === 'skipped';
+  const settled = feedback === 'skipped';
   const isPassage = run.course.mode === 'passage';
   const progress = ((index + (settled ? 1 : 0)) / run.items.length) * 100;
 
@@ -572,6 +576,11 @@ function Practice({
   useLayoutEffect(() => {
     if (promptArea.current) promptArea.current.scrollTop = 0;
   }, [index]);
+  useLayoutEffect(() => {
+    if (feedback === 'wrong' && promptArea.current) {
+      promptArea.current.scrollTop = promptArea.current.scrollHeight;
+    }
+  }, [feedback]);
 
   const beginTimer = () => {
     if (started.current === null) started.current = performance.now();
@@ -581,25 +590,28 @@ function Practice({
       composing.current ||
       performance.now() - lastComposition.current < 80 ||
       !normalize(value) ||
-      settled
+      settled ||
+      completed.current
     )
       return;
     beginTimer();
     if (isCorrect(value, item.segments)) {
-      setStats((s) => ({
-        ...s,
-        attempts: s.attempts + 1,
-        correct: s.correct + 1,
-        characters: s.characters + normalize(readingOf(item.segments)).length,
-      }));
-      setFeedback('correct');
+      const nextStats = {
+        ...stats,
+        attempts: stats.attempts + 1,
+        correct: stats.correct + 1,
+        characters: stats.characters + normalize(readingOf(item.segments)).length,
+      };
+      setStats(nextStats);
+      advance(nextStats);
     } else {
       setStats((s) => ({ ...s, attempts: s.attempts + 1 }));
+      setDifference(compareAnswer(value, item.segments));
       setFeedback('wrong');
     }
   };
-  const next = () => {
-    if (!settled || completed.current) return;
+  const advance = (nextStats: typeof stats) => {
+    if (completed.current || composing.current) return;
     if (index === run.items.length - 1) {
       completed.current = true;
       const seconds =
@@ -611,7 +623,7 @@ function Practice({
         date: localDate(),
         mode: run.course.mode,
         total: run.items.length,
-        ...stats,
+        ...nextStats,
         seconds,
         title: isPassage ? (item.title ?? '장문 연습') : `${modeNames[run.course.mode]} 연습`,
       });
@@ -619,7 +631,9 @@ function Practice({
       setIndex((i) => i + 1);
       setValue('');
       setFeedback('idle');
+      setDifference(null);
       setFullText(false);
+      setAnnouncement(`${index + 2}번째 문제입니다.`);
       if (input.current) {
         input.current.value = '';
         input.current.focus({ preventScroll: true });
@@ -635,6 +649,9 @@ function Practice({
 
   return (
     <div className={`practice-screen mode-${run.course.mode}`}>
+      <span className="sr-only" role="status">
+        {announcement}
+      </span>
       <header className="practice-header">
         <button
           className="icon-button"
@@ -703,18 +720,14 @@ function Practice({
             </div>
           </details>
         )}
+        {feedback === 'wrong' && difference && <AnswerComparison difference={difference} />}
       </main>
       <div className="input-dock">
         <div className={`feedback-line ${feedback}`} aria-live="polite">
-          {feedback === 'correct' ? (
-            <>
-              <Check size={17} />
-              <strong>정확해요! 잘하고 있어요.</strong>
-            </>
-          ) : feedback === 'wrong' ? (
+          {feedback === 'wrong' ? (
             <>
               <RotateCcw size={15} />
-              <span>조금 달라요. 다시 확인해 보세요.</span>
+              <span>{difference?.message ?? '다른 부분을 확인해 보세요.'}</span>
             </>
           ) : feedback === 'skipped' ? (
             <>
@@ -730,9 +743,7 @@ function Practice({
             </>
           )}
         </div>
-        <label
-          className={`input-wrap ${feedback === 'wrong' ? 'has-error' : ''} ${feedback === 'correct' ? 'has-success' : ''}`}
-        >
+        <label className={`input-wrap ${feedback === 'wrong' ? 'has-error' : ''}`}>
           <span className="sr-only">연습 답안</span>
           <textarea
             ref={input}
@@ -750,12 +761,19 @@ function Practice({
               if (!settled) {
                 beginTimer();
                 setValue(e.target.value);
-                if (feedback === 'wrong') setFeedback('idle');
+                if (feedback === 'wrong') {
+                  setFeedback('idle');
+                  setDifference(null);
+                }
               }
             }}
             onCompositionStart={() => {
               composing.current = true;
               beginTimer();
+              if (feedback === 'wrong') {
+                setFeedback('idle');
+                setDifference(null);
+              }
             }}
             onCompositionEnd={(e) => {
               composing.current = false;
@@ -771,12 +789,11 @@ function Practice({
                 performance.now() - lastComposition.current > 80
               ) {
                 e.preventDefault();
-                if (settled) next();
+                if (settled) advance(stats);
                 else check();
               }
             }}
           />
-          {feedback === 'correct' && <Check size={21} className="input-check" />}
         </label>
         <div className="input-actions">
           <button
@@ -791,7 +808,7 @@ function Practice({
             className="primary-button check-button"
             onPointerDown={(e) => e.preventDefault()}
             disabled={!settled && !normalize(value)}
-            onClick={settled ? next : check}
+            onClick={settled ? () => advance(stats) : check}
           >
             {settled ? (index === run.items.length - 1 ? '결과 보기' : '다음 문제') : '확인'}
             {settled ? <ArrowRight size={18} /> : <Check size={18} />}
@@ -833,6 +850,52 @@ function Practice({
         </Modal>
       )}
     </div>
+  );
+}
+
+function AnswerComparison({ difference }: { difference: AnswerDiff }) {
+  const comparison = useRef<HTMLElement>(null);
+  useLayoutEffect(() => {
+    for (const row of comparison.current?.querySelectorAll<HTMLElement>('.diff-row p') ?? []) {
+      const firstError = row.querySelector<HTMLElement>(
+        '.diff-replace, .diff-missing, .diff-extra',
+      );
+      if (firstError) {
+        row.scrollLeft +=
+          firstError.getBoundingClientRect().left -
+          row.getBoundingClientRect().left -
+          row.clientWidth / 3;
+      }
+    }
+  }, [difference]);
+  return (
+    <section className="answer-diff" aria-label="오답 비교" ref={comparison}>
+      <h3>표시된 부분을 고쳐 보세요</h3>
+      <div className="diff-row">
+        <span>내 입력</span>
+        <p lang="ja">
+          {difference.parts.map((part, i) => (
+            <span key={i} className={`diff-${part.kind}`}>
+              {part.actual || <span aria-label="빠진 글자">＿</span>}
+            </span>
+          ))}
+        </p>
+      </div>
+      <div className="diff-row expected">
+        <span>정답</span>
+        <p lang="ja">
+          {difference.parts.map((part, i) => (
+            <span key={i} className={`diff-${part.kind}`}>
+              {part.expected || <span aria-label="빼야 할 글자">×</span>}
+            </span>
+          ))}
+        </p>
+      </div>
+      <p className="diff-note">
+        공백·문장부호를 빼고, 가타카나는 히라가나로 비교해요.
+        <br />긴 문장은 좌우로 밀어 확인해요.
+      </p>
+    </section>
   );
 }
 

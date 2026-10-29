@@ -46,15 +46,22 @@ describe('mobile IME practice flow', () => {
     fireEvent.change(input, { target: { value: answer } });
     fireEvent.keyDown(input, { key: 'Enter', isComposing: true, keyCode: 229 });
     fireEvent.click(screen.getByRole('button', { name: '확인' }));
-    expect(screen.queryByText('정확해요! 잘하고 있어요.')).toBeNull();
-    expect(screen.queryByText('조금 달라요. 다시 확인해 보세요.')).toBeNull();
+    expect(document.querySelector('.practice-counter')?.textContent?.replace(/\s/g, '')).toBe(
+      '1/5',
+    );
+    expect(screen.queryByRole('region', { name: '오답 비교' })).toBeNull();
     fireEvent.compositionEnd(input, { data: answer });
     fireEvent.keyDown(input, { key: 'Enter', keyCode: 13 });
-    expect(screen.queryByText('정확해요! 잘하고 있어요.')).toBeNull();
+    expect(document.querySelector('.practice-counter')?.textContent?.replace(/\s/g, '')).toBe(
+      '1/5',
+    );
     clock.mockReturnValue(1100);
     fireEvent.click(screen.getByRole('button', { name: '확인' }));
-    expect(screen.getByText('정확해요! 잘하고 있어요.')).toBeTruthy();
-    fireEvent.click(screen.getByRole('button', { name: '다음 문제' }));
+    expect(document.querySelector('.practice-counter')?.textContent?.replace(/\s/g, '')).toBe(
+      '2/5',
+    );
+    expect(screen.queryByRole('button', { name: '다음 문제' })).toBeNull();
+    expect(screen.getByRole('progressbar').getAttribute('aria-valuenow')).toBe('20');
     expect(input.value).toBe('');
     expect(document.activeElement).toBe(input);
     expect(loadData().history).toHaveLength(0);
@@ -64,15 +71,15 @@ describe('mobile IME practice flow', () => {
     const input = start();
     fireEvent.change(input, { target: { value: 'まちがい' } });
     fireEvent.click(screen.getByRole('button', { name: '확인' }));
-    expect(screen.getByText('조금 달라요. 다시 확인해 보세요.')).toBeTruthy();
+    expect(screen.getByRole('region', { name: '오답 비교' })).toBeTruthy();
     for (let i = 0; i < 5; i++) {
-      if (i === 2) fireEvent.click(screen.getByRole('button', { name: '건너뛰기' }));
-      else {
+      if (i === 2) {
+        fireEvent.click(screen.getByRole('button', { name: '건너뛰기' }));
+        fireEvent.click(screen.getByRole('button', { name: '다음 문제' }));
+      } else {
         fireEvent.change(input, { target: { value: currentAnswer() } });
         fireEvent.click(screen.getByRole('button', { name: '확인' }));
-        expect(screen.getByText('정확해요! 잘하고 있어요.')).toBeTruthy();
       }
-      fireEvent.click(screen.getByRole('button', { name: i === 4 ? '결과 보기' : '다음 문제' }));
     }
     expect(screen.getByRole('heading', { name: '연습을 마쳤어요!' })).toBeTruthy();
     const records = loadData().history;
@@ -87,6 +94,24 @@ describe('mobile IME practice flow', () => {
     expect(screen.getByText('67')).toBeTruthy();
     fireEvent.click(screen.getByRole('button', { name: '기록' }));
     expect(screen.getByText('1회 완료')).toBeTruthy();
+  });
+
+  it('pinpoints a wrong character, clears the comparison while editing, and advances on correction', () => {
+    const input = start();
+    const answer = currentAnswer();
+    fireEvent.change(input, { target: { value: 'か' } });
+    fireEvent.click(screen.getByRole('button', { name: '확인' }));
+    expect(screen.getByText(`1번째 글자: 「か」 → 「${answer}」`)).toBeTruthy();
+    const comparison = screen.getByRole('region', { name: '오답 비교' });
+    expect(comparison.querySelector('.diff-replace')?.textContent).toBe('か');
+    fireEvent.change(input, { target: { value: answer } });
+    expect(screen.queryByRole('region', { name: '오답 비교' })).toBeNull();
+    fireEvent.click(screen.getByRole('button', { name: '확인' }));
+    expect(input.value).toBe('');
+    expect(document.activeElement).toBe(input);
+    expect(document.querySelector('.practice-counter')?.textContent?.replace(/\s/g, '')).toBe(
+      '2/5',
+    );
   });
 
   it('leaves unfinished sessions unrecorded and preserves changed settings', () => {

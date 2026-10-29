@@ -1023,16 +1023,10 @@ rp {
   margin-bottom: 7px;
   color: #9d93ad;
 }
-.feedback-line.correct {
-  justify-content: flex-start;
-  color: #588e7a;
-}
-.feedback-line.correct strong {
-  font-weight: 500;
-}
 .feedback-line.wrong {
   justify-content: flex-start;
-  color: #c17868;
+  color: #ad5d58;
+  line-height: 1.7;
 }
 .feedback-line.skipped {
   justify-content: flex-start;
@@ -1072,10 +1066,6 @@ rp {
   border-color: #dca89a;
   box-shadow: 0 0 0 3px #fff6f3;
 }
-.input-wrap.has-success {
-  border-color: #96bda9;
-  box-shadow: 0 0 0 3px #f0f9f4;
-}
 .input-wrap textarea {
   font-family:
     'Noto Sans JP',
@@ -1101,11 +1091,68 @@ rp {
   font-size: 16px;
   color: #c3b9ce;
 }
-.input-check {
-  align-self: center;
-  margin-left: 7px;
-  color: #719e87;
-  flex-shrink: 0;
+.answer-diff {
+  border: 1px solid #e6ddea;
+  border-radius: 12px;
+  background: white;
+  padding: 14px;
+  margin-top: 16px;
+  text-align: left;
+}
+.answer-diff h3 {
+  font-size: 11px;
+  font-weight: 600;
+  color: #887592;
+  margin-bottom: 10px;
+}
+.diff-row {
+  display: grid;
+  grid-template-columns: 38px minmax(0, 1fr);
+  align-items: baseline;
+  gap: 7px;
+  margin-top: 8px;
+}
+.diff-row > span {
+  font-size: 10px;
+  color: #94839e;
+}
+.diff-row p {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  white-space: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  color: #5a4b68;
+}
+.diff-replace,
+.diff-extra,
+.diff-missing {
+  background: #fff0f1;
+  color: #b14b5b;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  border-radius: 3px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.diff-extra {
+  text-decoration: line-through;
+}
+.expected .diff-replace,
+.expected .diff-missing,
+.expected .diff-extra {
+  background: #efebfa;
+  color: #6650aa;
+  text-decoration: none;
+  font-weight: 600;
+}
+.answer-diff .diff-note {
+  font-size: 9px;
+  line-height: 1.7;
+  color: #95869f;
+  margin-top: 11px;
 }
 .input-actions {
   display: flex;
@@ -1848,6 +1895,24 @@ rp {
   }
 }
 @container practice (max-height:600px) {
+  .answer-diff {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  .answer-diff h3 {
+    margin-bottom: 6px;
+  }
+  .diff-row {
+    margin-top: 6px;
+  }
+  .diff-row p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .answer-diff .diff-note {
+    font-size: 8px;
+    margin-top: 6px;
+  }
   .practice-header {
     height: 48px;
   }

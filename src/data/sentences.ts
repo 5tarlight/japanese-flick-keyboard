@@ -64,6 +64,46 @@ const groups: Record<SentenceLength, string> = {
 よくできました。 :: 잘했어요. :: Well done.
 [明日|あした]も[来|き]ます。 :: 내일도 올게요. :: I will come tomorrow too.
 [一緒|いっしょ]に[歩|ある]きましょう。 :: 함께 걸어요. :: Let's walk together.
+すみません。 :: 실례합니다·죄송합니다. :: Excuse me; I am sorry.
+どういたしまして。 :: 천만에요. :: You are welcome.
+[失礼|しつれい]します。 :: 실례하겠습니다. :: Excuse me.
+お[先|さき]にどうぞ。 :: 먼저 하세요. :: After you.
+[気|き]をつけて。 :: 조심하세요. :: Take care.
+いただいてもいいですか。 :: 받아도 될까요? :: May I have it?
+お[待|ま]たせしました。 :: 기다리게 했네요. :: Thank you for waiting.
+よろしくお[願|ねが]いします。 :: 잘 부탁드립니다. :: I look forward to working with you.
+ただいま。 :: 다녀왔어요. :: I am home.
+おかえりなさい。 :: 잘 다녀왔어요? :: Welcome home.
+いってきます。 :: 다녀오겠습니다. :: I am heading out.
+いってらっしゃい。 :: 잘 다녀오세요. :: Have a good day out.
+こちらこそ。 :: 저야말로요. :: Likewise.
+おめでとうございます。 :: 축하합니다. :: Congratulations.
+それはよかったです。 :: 그것 참 다행이네요. :: I am glad to hear that.
+[少|すこ]し[考|かんが]えます。 :: 조금 생각해 볼게요. :: I will think about it a little.
+[今|いま]は[忙|いそが]しいです。 :: 지금은 바빠요. :: I am busy right now.
+よく[分|わ]かりました。 :: 잘 이해했어요. :: I understand now.
+まだ[分|わ]かりません。 :: 아직 모르겠어요. :: I do not understand yet.
+お[手伝|てつだ]いします。 :: 도와드릴게요. :: I will help you.
+[携帯|けいたい]を[充電|じゅうでん]します。 :: 휴대전화를 충전해요. :: I charge my phone.
+バスに[乗|の]ります。 :: 버스를 타요. :: I take the bus.
+[次|つぎ]で[降|お]ります。 :: 다음 정거장에서 내려요. :: I get off at the next stop.
+[財布|さいふ]を[探|さが]しています。 :: 지갑을 찾고 있어요. :: I am looking for my wallet.
+[鍵|かぎ]が[見|み]つかりました。 :: 열쇠를 찾았어요. :: I found my key.
+[帽子|ぼうし]をかぶります。 :: 모자를 써요. :: I put on a hat.
+[上着|うわぎ]を[着|き]ます。 :: 겉옷을 입어요. :: I put on a jacket.
+[鞄|かばん]を[持|も]ってください。 :: 가방을 들어 주세요. :: Please hold the bag.
+[宿題|しゅくだい]が[終|お]わりました。 :: 숙제가 끝났어요. :: I finished my homework.
+[今日|きょう]は[休|やす]みです。 :: 오늘은 쉬는 날이에요. :: Today is my day off.
+[二人|ふたり]で[行|い]きます。 :: 둘이서 갈게요. :: The two of us will go.
+ここで[待|ま]ちます。 :: 여기에서 기다릴게요. :: I will wait here.
+[少|すこ]し[眠|ねむ]いです。 :: 조금 졸려요. :: I am a little sleepy.
+お[湯|ゆ]が[沸|わ]きました。 :: 물이 끓었어요. :: The water has boiled.
+[花|はな]を[飾|かざ]ります。 :: 꽃을 장식해요. :: I arrange some flowers.
+[音|おと]を[小|ちい]さくします。 :: 소리를 줄일게요. :: I will turn the sound down.
+[風邪|かぜ]をひきました。 :: 감기에 걸렸어요. :: I caught a cold.
+[予約|よやく]を[変|か]えたいです。 :: 예약을 바꾸고 싶어요. :: I would like to change my reservation.
+[写真|しゃしん]を[送|おく]ります。 :: 사진을 보낼게요. :: I will send a photo.
+いい[一日|いちにち]でした。 :: 좋은 하루였어요. :: It was a good day.
 `,
   middle: `
 [毎朝|まいあさ]、[温|あたた]かいお[茶|ちゃ]を[飲|の]みます。 :: 매일 아침 따뜻한 차를 마셔요. :: I drink warm tea every morning.
@@ -121,6 +161,51 @@ const groups: Record<SentenceLength, string> = {
 この[曲|きょく]を[聞|き]くと[元気|げんき]になります。 :: 이 곡을 들으면 기운이 나요. :: This song cheers me up.
 [大切|たいせつ]なことを[紙|かみ]に[書|か]いておきます。 :: 중요한 것을 종이에 적어 둘게요. :: I will write down the important things on paper.
 [今日|きょう]の[練習|れんしゅう]はここまでにしましょう。 :: 오늘 연습은 여기까지 해요. :: Let's finish today's practice here.
+[空港|くうこう]まではこのバスで[行|い]けますか。 :: 공항까지 이 버스로 갈 수 있나요? :: Can I get to the airport on this bus?
+[改札|かいさつ]を[出|で]たら[右|みぎ]に[進|すす]んでください。 :: 개찰구를 나오면 오른쪽으로 가 주세요. :: Please go right after leaving the ticket gate.
+[新幹線|しんかんせん]の[窓側|まどがわ]の[席|せき]を[予約|よやく]しました。 :: 신칸센의 창가 좌석을 예약했어요. :: I reserved a window seat on the bullet train.
+[次|つぎ]の[駅|えき]で[地下鉄|ちかてつ]に[乗|の]り[換|か]えます。 :: 다음 역에서 지하철로 갈아타요. :: I transfer to the subway at the next station.
+[片道|かたみち]の[切符|きっぷ]を[一枚|いちまい]お[願|ねが]いします。 :: 편도표 한 장 주세요. :: One single ticket, please.
+[荷物|にもつ]を[預|あず]けられる[場所|ばしょ]はありますか。 :: 짐을 맡길 수 있는 곳이 있나요? :: Is there somewhere I can leave my luggage?
+[横断歩道|おうだんほどう]を[渡|わた]ってから[左|ひだり]に[曲|ま]がります。 :: 횡단보도를 건넌 뒤 왼쪽으로 돌아요. :: I cross the crosswalk and then turn left.
+[近|ちか]くの[薬局|やっきょく]は[何時|なんじ]まで[開|あ]いていますか。 :: 근처 약국은 몇 시까지 여나요? :: Until what time is the nearby pharmacy open?
+この[料理|りょうり]には[卵|たまご]が[入|はい]っていますか。 :: 이 요리에는 달걀이 들어 있나요? :: Does this dish contain egg?
+お[肉|にく]の[代|か]わりに[豆腐|とうふ]を[使|つか]いました。 :: 고기 대신 두부를 사용했어요. :: I used tofu instead of meat.
+[紅茶|こうちゃ]には[砂糖|さとう]を[入|い]れないでください。 :: 홍차에는 설탕을 넣지 말아 주세요. :: Please do not put sugar in the tea.
+[温|あたた]かいうちに[食|た]べてください。 :: 따뜻할 때 드세요. :: Please eat it while it is warm.
+[夕食|ゆうしょく]の[材料|ざいりょう]をスーパーで[買|か]ってきます。 :: 저녁 재료를 슈퍼에서 사 올게요. :: I will get ingredients for dinner at the supermarket.
+[冷|つめ]たい[飲|の]み[物|もの]を[二|ふた]つください。 :: 차가운 음료 두 개 주세요. :: Two cold drinks, please.
+このスープは[生姜|しょうが]の[香|かお]りがします。 :: 이 수프에서는 생강 향이 나요. :: This soup smells of ginger.
+[好|す]きな[漫画|まんが]の[新|あたら]しい[巻|かん]を[買|か]いました。 :: 좋아하는 만화의 새 권을 샀어요. :: I bought the latest volume of my favorite manga.
+[明日|あした]の[授業|じゅぎょう]までに[宿題|しゅくだい]を[出|だ]します。 :: 내일 수업 전까지 숙제를 낼게요. :: I will submit my homework before tomorrow's class.
+[黒板|こくばん]の[文字|もじ]が[小|ちい]さくて[読|よ]めません。 :: 칠판의 글자가 작아서 읽을 수 없어요. :: The writing on the board is too small for me to read.
+[試験|しけん]の[前|まえ]に[教科書|きょうかしょ]を[読|よ]み[直|なお]します。 :: 시험 전에 교과서를 다시 읽어요. :: I reread my textbook before the exam.
+[質問|しつもん]があれば[手|て]を[挙|あ]げてください。 :: 질문이 있으면 손을 들어 주세요. :: Please raise your hand if you have a question.
+[同僚|どうりょう]と[昼休|ひるやす]みに[散歩|さんぽ]をしました。 :: 동료와 점심시간에 산책했어요. :: I took a walk with a coworker during lunch break.
+[会議|かいぎ]の[場所|ばしょ]が[変|か]わったと[聞|き]きました。 :: 회의 장소가 바뀌었다고 들었어요. :: I heard that the meeting location has changed.
+[午後|ごご]は[家|いえ]で[仕事|しごと]をする[予定|よてい]です。 :: 오후에는 집에서 일할 예정이에요. :: I plan to work from home this afternoon.
+[書類|しょるい]を[確認|かくにん]してから[返事|へんじ]をします。 :: 서류를 확인한 뒤 답변할게요. :: I will reply after checking the documents.
+[分|わ]からないところを[先輩|せんぱい]に[聞|き]きました。 :: 모르는 부분을 선배에게 물었어요. :: I asked a senior colleague about the part I did not understand.
+[充電器|じゅうでんき]を[持|も]ってくるのを[忘|わす]れました。 :: 충전기를 가져오는 것을 잊었어요. :: I forgot to bring my charger.
+[電話|でんわ]の[音|おと]が[聞|き]こえにくいです。 :: 전화 소리가 잘 들리지 않아요. :: I am having trouble hearing the call.
+[新|あたら]しい[住所|じゅうしょ]を[教|おし]えてもらえますか。 :: 새 주소를 알려 주실 수 있나요? :: Could you tell me your new address?
+[出|で]かける[前|まえ]に[電池|でんち]を[交換|こうかん]しました。 :: 외출하기 전에 건전지를 교체했어요. :: I changed the batteries before going out.
+[暑|あつ]くなったので[扇風機|せんぷうき]を[出|だ]しました。 :: 더워져서 선풍기를 꺼냈어요. :: I took out the fan because the weather got hot.
+[洗面所|せんめんじょ]に[新|あたら]しいタオルを[置|お]きました。 :: 세면실에 새 수건을 놓았어요. :: I put fresh towels in the washroom.
+[食器|しょっき]を[洗|あら]って[棚|たな]に[戻|もど]します。 :: 식기를 씻어 선반에 돌려놓아요. :: I wash the dishes and put them back on the shelf.
+[玄関|げんかん]に[届|とど]いた[箱|はこ]を[運|はこ]びます。 :: 현관에 도착한 상자를 옮길게요. :: I will carry in the box that arrived at the entrance.
+[冷房|れいぼう]が[強|つよ]いので[上着|うわぎ]を[着|き]ます。 :: 냉방이 세서 겉옷을 입어요. :: I put on a jacket because the air conditioning is strong.
+[月曜日|げつようび]から[新|あたら]しい[仕事|しごと]が[始|はじ]まります。 :: 월요일부터 새 일이 시작돼요. :: My new job starts on Monday.
+[来月|らいげつ]の[連休|れんきゅう]に[実家|じっか]へ[帰|かえ]ります。 :: 다음 달 연휴에 본가로 돌아가요. :: I am going back to my family home during next month's holidays.
+[午後|ごご]から[雨|あめ]になるそうです。 :: 오후부터 비가 온다고 해요. :: I heard it will rain from the afternoon.
+[夕焼|ゆうや]けを[見|み]るために[海辺|うみべ]へ[行|い]きました。 :: 저녁노을을 보려고 바닷가에 갔어요. :: I went to the seaside to watch the sunset glow.
+[満月|まんげつ]の[夜|よる]は[道|みち]が[明|あか]るく[見|み]えます。 :: 보름달이 뜬 밤에는 길이 밝아 보여요. :: The path looks brighter on a full-moon night.
+[庭|にわ]の[向日葵|ひまわり]が[高|たか]く[育|そだ]ちました。 :: 정원의 해바라기가 높이 자랐어요. :: The sunflowers in the garden grew tall.
+[池|いけ]の[鯉|こい]がゆっくり[泳|およ]いでいます。 :: 연못의 잉어가 천천히 헤엄치고 있어요. :: The carp in the pond are swimming slowly.
+[春|はる]になると[燕|つばめ]が[戻|もど]ってきます。 :: 봄이 되면 제비가 돌아와요. :: The swallows return in spring.
+[公園|こうえん]で[双子|ふたご]の[子供|こども]たちに[会|あ]いました。 :: 공원에서 쌍둥이 아이들을 만났어요. :: I met twin children in the park.
+[週末|しゅうまつ]に[親戚|しんせき]が[遊|あそ]びに[来|き]ます。 :: 주말에 친척이 놀러 와요. :: My relatives are coming to visit this weekend.
+[明後日|あさって]までに[予定|よてい]を[決|き]めましょう。 :: 모레까지 일정을 정해요. :: Let's decide on our plans by the day after tomorrow.
 `,
   long: `
 [朝|あさ]、[窓|まど]を[開|あ]けると[涼|すず]しい[風|かぜ]が[入|はい]ってきて、[気持|きも]ちよく[一日|いちにち]を[始|はじ]められました。 :: 아침에 창문을 열자 시원한 바람이 들어와 기분 좋게 하루를 시작할 수 있었어요. :: When I opened the window in the morning, a cool breeze came in and helped me start the day feeling refreshed.
@@ -168,6 +253,61 @@ const groups: Record<SentenceLength, string> = {
 [好|す]きな[言葉|ことば]を[手帳|てちょう]に[書|か]き[留|と]めておいて、[疲|つか]れたときに[読|よ]み[返|かえ]すのが[小|ちい]さな[習慣|しゅうかん]です。 :: 좋아하는 말을 수첩에 적어 두었다가 지칠 때 다시 읽는 것이 작은 습관이에요. :: I have a small habit of noting down words I like and reading them again when I feel tired.
 [公園|こうえん]で[拾|ひろ]った[赤|あか]い[葉|は]を[本|ほん]に[挟|はさ]んでおいたら、[秋|あき]の[散歩|さんぽ]の[思|おも]い[出|で]が[残|のこ]りました。 :: 공원에서 주운 빨간 잎을 책에 끼워 두었더니 가을 산책의 추억이 남았어요. :: Pressing a red leaf I found in the park inside a book preserved a memory of my autumn walk.
 [今日|きょう]は[昨日|きのう]より[少|すこ]しだけ[速|はや]く[入力|にゅうりょく]できたので、[明日|あした]も[無理|むり]のないペースで[練習|れんしゅう]を[続|つづ]けたいです。 :: 오늘은 어제보다 조금 더 빨리 입력할 수 있어서 내일도 무리 없는 속도로 연습을 계속하고 싶어요. :: I typed a little faster today than yesterday, so I want to keep practicing at a comfortable pace tomorrow.
+[朝|あさ]から[雨|あめ]が[降|ふ]っていたので、[出|で]かける[予定|よてい]を[変|か]えて[家|いえ]でゆっくりコーヒーを[飲|の]みました。 :: 아침부터 비가 와서 외출 계획을 바꾸고 집에서 천천히 커피를 마셨어요. :: It had been raining since morning, so I changed my plans and enjoyed a slow coffee at home.
+[買|か]い[物|もの]のときに[袋|ふくろ]をもらわなくてすむように、[鞄|かばん]にはいつも[小|ちい]さな[布|ぬの]の[袋|ふくろ]を[入|い]れています。 :: 장을 볼 때 봉투를 받지 않아도 되도록 가방에 늘 작은 천 가방을 넣어 다녀요. :: I always carry a small cloth bag so I do not need to ask for a shopping bag.
+[久|ひさ]しぶりにプールで[泳|およ]いだら[思|おも]ったより[疲|つか]れたので、[帰|かえ]りはバスに[乗|の]ることにしました。 :: 오랜만에 수영장에서 수영하니 생각보다 피곤해서 돌아올 때는 버스를 타기로 했어요. :: Swimming for the first time in a while was more tiring than expected, so I took the bus home.
+[新|あたら]しい[職場|しょくば]ではまだ[名前|なまえ]を[覚|おぼ]えていない[人|ひと]が[多|おお]いので、[会|あ]うたびに[挨拶|あいさつ]をするようにしています。 :: 새 직장에서는 아직 이름을 못 외운 사람이 많아서 만날 때마다 인사하려고 해요. :: I have not learned many names at my new workplace yet, so I make a point of greeting people.
+[空港|くうこう]で[切符|きっぷ]が[見|み]つからず[慌|あわ]てましたが、[鞄|かばん]の[小|ちい]さなポケットに[入|い]れてあったことを[思|おも]い[出|だ]しました。 :: 공항에서 표가 보이지 않아 당황했지만 가방의 작은 주머니에 넣어 둔 것이 생각났어요. :: I panicked when I could not find my ticket at the airport, then remembered putting it in a small pocket.
+[旅館|りょかん]の[人|ひと]に[静|しず]かな[部屋|へや]をお[願|ねが]いしたら、[庭|にわ]が[見|み]える[奥|おく]の[部屋|へや]に[案内|あんない]してくれました。 :: 여관 직원에게 조용한 방을 부탁하니 정원이 보이는 안쪽 방으로 안내해 주었어요. :: When I asked for a quiet room at the inn, the staff showed me a room at the back overlooking the garden.
+[野菜|やさい]が[苦手|にがて]な[弟|おとうと]も、[細|こま]かく[切|き]ってスープに[入|い]れると[最後|さいご]まで[食|た]べてくれることがあります。 :: 채소를 싫어하는 남동생도 잘게 썰어 수프에 넣으면 끝까지 먹어 주는 때가 있어요. :: Even my brother, who dislikes vegetables, sometimes finishes them when I chop them into soup.
+[友達|ともだち]に[渡|わた]すクッキーを[焼|や]いたのですが、[形|かたち]が[少|すこ]し[不揃|ふぞろ]いになったので[一緒|いっしょ]に[笑|わら]ってしまいました。 :: 친구에게 줄 쿠키를 구웠는데 모양이 조금 들쑥날쑥해져서 함께 웃어 버렸어요. :: I baked cookies for a friend, but their uneven shapes made us both laugh.
+[美術館|びじゅつかん]では[全部|ぜんぶ]の[作品|さくひん]を[急|いそ]いで[見|み]るよりも、[気|き]になった[絵|え]の[前|まえ]でゆっくり[過|す]ごすのが[好|す]きです。 :: 미술관에서는 모든 작품을 급히 보기보다 마음이 가는 그림 앞에서 천천히 시간을 보내는 것을 좋아해요. :: At art museums, I prefer spending time with paintings that catch my attention to rushing through every work.
+[図書館|としょかん]の[本|ほん]を[返|かえ]す[日|ひ]を[忘|わす]れないように、[借|か]りたらすぐに[手帳|てちょう]に[日付|ひづけ]を[書|か]くことにしています。 :: 도서관 책 반납일을 잊지 않으려고 빌리자마자 수첩에 날짜를 적기로 하고 있어요. :: To remember library due dates, I write them in my planner as soon as I borrow a book.
+[妹|いもうと]が[一人|ひとり]で[自転車|じてんしゃ]に[乗|の]れるようになったので、[休日|きゅうじつ]に[家族|かぞく]で[川沿|かわぞ]いの[道|みち]を[走|はし]りました。 :: 여동생이 혼자 자전거를 탈 수 있게 되어 휴일에 가족과 강변 길을 달렸어요. :: Now that my sister can ride a bicycle on her own, we cycled along the river as a family on a day off.
+[春|はる]にまいた[種|たね]から[小|ちい]さな[芽|め]が[出|で]たので、[毎朝|まいあさ][水|みず]をあげるのが[前|まえ]より[楽|たの]しみになりました。 :: 봄에 뿌린 씨앗에서 작은 싹이 나서 매일 아침 물 주는 일이 전보다 기대돼요. :: Tiny shoots appeared from the seeds I sowed in spring, making me look forward to watering them each morning.
+[夏|なつ]の[散歩|さんぽ]には[冷|つめ]たい[水|みず]を[入|い]れた[水筒|すいとう]を[持|も]って、[途中|とちゅう]で[木陰|こかげ]のベンチに[座|すわ]って[休|やす]みます。 :: 여름 산책에는 찬물을 담은 물병을 가지고 가서 도중에 나무 그늘 벤치에 앉아 쉬어요. :: On summer walks, I carry a bottle of cold water and stop to rest on a bench in the shade.
+[秋|あき]の[市場|いちば]で[栗|くり]を[見|み]つけたので、[祖母|そぼ]に[電話|でんわ]をして[美味|おい]しい[茹|ゆ]で[方|かた]を[教|おし]えてもらいました。 :: 가을 시장에서 밤을 발견해 할머니께 전화해서 맛있게 삶는 법을 배웠어요. :: I found chestnuts at the autumn market and called my grandmother to learn how to boil them well.
+[冬|ふゆ]の[朝|あさ]に[手袋|てぶくろ]を[忘|わす]れて[家|いえ]を[出|で]たので、[駅|えき]に[着|つ]くまで[手|て]をポケットに[入|い]れていました。 :: 겨울 아침에 장갑을 잊고 나와서 역에 도착할 때까지 손을 주머니에 넣고 있었어요. :: I left home without my gloves on a winter morning and kept my hands in my pockets until I reached the station.
+[雪|ゆき]が[積|つ]もった[道|みち]を[犬|いぬ]と[歩|ある]くと、[真|ま]っ[白|しろ]な[地面|じめん]に[大|おお]きさの[違|ちが]う[足跡|あしあと]が[並|なら]びました。 :: 눈이 쌓인 길을 개와 걸으니 새하얀 땅에 크기가 다른 발자국이 나란히 남았어요. :: Walking my dog along a snowy path left two different sizes of footprints side by side on the white ground.
+[来週|らいしゅう][友達|ともだち]が[泊|と]まりに[来|く]るので、[使|つか]っていなかった[部屋|へや]を[掃除|そうじ]して[新|あたら]しいシーツを[用意|ようい]しました。 :: 다음 주에 친구가 자러 오기 때문에 쓰지 않던 방을 청소하고 새 시트를 준비했어요. :: A friend is staying over next week, so I cleaned the unused room and prepared fresh sheets.
+[待|ま]ち[合|あ]わせの[時間|じかん]を[勘違|かんちが]いしていたことに[気|き]づいて、[友達|ともだち]に[電話|でんわ]して[約束|やくそく]を[確認|かくにん]しました。 :: 약속 시간을 잘못 알고 있었다는 것을 깨닫고 친구에게 전화해 약속을 확인했어요. :: I realized I had mixed up our meeting time, so I called my friend to confirm the arrangements.
+[混|こ]んでいるバスで[席|せき]を[譲|ゆず]ると、お[年寄|としよ]りが[笑顔|えがお]でお[礼|れい]を[言|い]ってくれて[嬉|うれ]しくなりました。 :: 붐비는 버스에서 자리를 양보하니 어르신이 미소 지으며 고맙다고 해서 기뻤어요. :: When I offered my seat on a crowded bus, an older passenger thanked me with a smile, which made me happy.
+[喫茶店|きっさてん]で[携帯|けいたい]を[充電|じゅうでん]したかったので、コンセントを[使|つか]ってもいいか[店員|てんいん]に[聞|き]いてみました。 :: 카페에서 휴대전화를 충전하고 싶어서 콘센트를 사용해도 되는지 직원에게 물어봤어요. :: I wanted to charge my phone at the café, so I asked a staff member whether I could use an outlet.
+[自分|じぶん]の[日本語|にほんご]を[録音|ろくおん]して[聞|き]いてみると、[話|はな]しているときには[気|き]づかなかった[発音|はつおん]の[癖|くせ]が[分|わ]かります。 :: 자신의 일본어를 녹음해 들어 보면 말할 때는 몰랐던 발음 습관을 알 수 있어요. :: Listening to a recording of my Japanese reveals pronunciation habits I do not notice while speaking.
+[覚|おぼ]えたばかりの[言葉|ことば]を[使|つか]って[短|みじか]い[文章|ぶんしょう]を[作|つく]ると、[意味|いみ]だけでなく[使|つか]い[方|かた]も[覚|おぼ]えやすくなります。 :: 막 배운 단어로 짧은 글을 만들면 뜻뿐 아니라 사용법도 외우기 쉬워져요. :: Writing short sentences with newly learned words makes both their meanings and usage easier to remember.
+[好|す]きな[歌|うた]を[口|くち]ずさみながら[部屋|へや]を[片付|かたづ]けていたら、[面倒|めんどう]だと[思|おも]っていた[掃除|そうじ]も[早|はや]く[終|お]わりました。 :: 좋아하는 노래를 흥얼거리며 방을 정리했더니 귀찮게 느꼈던 청소도 빨리 끝났어요. :: Tidying my room while humming a favorite song made a chore I had been dreading go by quickly.
+[速|はや]く[打|う]とうとして[何度|なんど]も[間違|まちが]えたので、まずは[一文字|ひともじ]ずつ[確|たし]かめながら[入力|にゅうりょく]することにしました。 :: 빨리 치려다가 여러 번 틀려서 우선 한 글자씩 확인하며 입력하기로 했어요. :: After making several mistakes while trying to type fast, I decided to check each character as I typed.
+[同|おな]じ[姿勢|しせい]で[長|なが]く[座|すわ]っていたので、[作業|さぎょう]を[中断|ちゅうだん]して[窓|まど]のそばで[少|すこ]し[体|からだ]を[動|うご]かしました。 :: 같은 자세로 오래 앉아 있어서 작업을 멈추고 창가에서 몸을 조금 움직였어요. :: After sitting in the same position for a long time, I paused my work and moved around by the window.
+[届|とど]いた[荷物|にもつ]を[開|あ]けると、[注文|ちゅうもん]した[本|ほん]のほかに[店|みせ]からの[小|ちい]さなお[礼|れい]の[手紙|てがみ]が[入|はい]っていました。 :: 도착한 택배를 열어 보니 주문한 책 외에 가게에서 보낸 작은 감사 편지가 들어 있었어요. :: Inside the parcel, I found the book I ordered and a small thank-you note from the shop.
+[小|ちい]さいころに[使|つか]っていた[筆箱|ふでばこ]を[見|み]つけて、[学校|がっこう]で[友達|ともだち]と[過|す]ごした[時間|じかん]を[懐|なつ]かしく[思|おも]いました。 :: 어릴 때 쓰던 필통을 발견하고 학교에서 친구들과 보내던 시간이 그리워졌어요. :: Finding my old childhood pencil case brought back fond memories of time spent with friends at school.
+[道|みち]で[落|お]とし[物|もの]の[財布|さいふ]を[見|み]つけたので、[持|も]ち[主|ぬし]が[困|こま]っていると[思|おも]い、[近|ちか]くの[交番|こうばん]へ[届|とど]けました。 :: 길에서 떨어진 지갑을 발견해 주인이 곤란할 거라 생각하고 근처 파출소에 맡겼어요. :: I found a lost wallet on the street and took it to a nearby police box, thinking its owner must be worried.
+[地下鉄|ちかてつ]の[出口|でぐち]を[間違|まちが]えたのですが、[通|とお]りがかった[人|ひと]に[聞|き]いたおかげで[無事|ぶじ]に[約束|やくそく]の[場所|ばしょ]に[着|つ]きました。 :: 지하철 출구를 잘못 나왔지만 지나가던 사람에게 물어본 덕분에 무사히 약속 장소에 도착했어요. :: I took the wrong subway exit, but asking a passerby helped me reach our meeting place safely.
+[旅先|たびさき]で[買|か]った[茶碗|ちゃわん]を[毎日|まいにち][使|つか]っていると、[何気|なにげ]ない[食事|しょくじ]の[時間|じかん]にも[旅|たび]のことを[思|おも]い[出|だ]せます。 :: 여행지에서 산 밥공기를 매일 쓰면 평범한 식사 시간에도 여행을 떠올릴 수 있어요. :: Using a rice bowl I bought on a trip brings back travel memories even during an ordinary meal.
+[店|みせ]で[見|み]た[上着|うわぎ]の[色|いろ]が[決|き]められなかったので、[一度|いちど][家|いえ]に[帰|かえ]って[手持|ても]ちの[服|ふく]と[合|あ]うか[考|かんが]えました。 :: 가게에서 본 겉옷의 색을 정하지 못해서 일단 집에 돌아가 가지고 있는 옷과 어울릴지 생각했어요. :: Unable to choose a jacket color at the shop, I went home to think about what would match my clothes.
+[友達|ともだち]の[引|ひ]っ[越|こ]しを[手伝|てつだ]った[後|あと]、[片付|かたづ]いたばかりの[部屋|へや]で[一緒|いっしょ]に[温|あたた]かいうどんを[食|た]べました。 :: 친구의 이사를 도운 뒤 막 정리한 방에서 함께 따뜻한 우동을 먹었어요. :: After helping a friend move, we ate warm udon together in the freshly tidied room.
+[朝食|ちょうしょく]のパンが[少|すこ]し[残|のこ]っていたので、[卵|たまご]と[牛乳|ぎゅうにゅう]に[浸|ひた]してフライパンで[焼|や]いてみました。 :: 아침 빵이 조금 남아 있어서 달걀과 우유에 적셔 프라이팬에 구워 봤어요. :: With some breakfast bread left over, I soaked it in egg and milk and tried frying it in a pan.
+[夜|よる]に[外|そと]を[歩|ある]いていたら、[家|いえ]の[窓|まど]から[夕食|ゆうしょく]の[明|あか]かりが[漏|も]れていて、[私|わたし]も[早|はや]く[帰|かえ]りたくなりました。 :: 밤에 밖을 걷다 집 창문으로 저녁 불빛이 새어 나오는 것을 보니 저도 빨리 돌아가고 싶어졌어요. :: Seeing dinner lights glowing through windows during an evening walk made me want to get home too.
+[古|ふる]い[写真|しゃしん]を[整理|せいり]していたら[家族旅行|かぞくりょこう]の[一枚|いちまい]が[出|で]てきて、[母|はは]とその[日|ひ]のことを[話|はな]し[込|こ]みました。 :: 오래된 사진을 정리하다 가족여행 사진 한 장이 나와 어머니와 그날 이야기를 한참 나눴어요. :: While sorting old photos, I found one from a family trip and spent a long time talking about that day with my mother.
+[休日|きゅうじつ]に[遠|とお]くへ[出|で]かけなくても、[近所|きんじょ]の[歩|ある]いたことがない[道|みち]に[入|はい]るだけで[新鮮|しんせん]な[気分|きぶん]になります。 :: 휴일에 멀리 나가지 않아도 동네에서 걸어 본 적 없는 길에 들어서는 것만으로 새로운 기분이 들어요. :: Even without going far on a day off, taking an unfamiliar neighborhood street makes me feel refreshed.
+[初|はじ]めて[陶芸|とうげい]を[体験|たいけん]したときはうまく[形|かたち]を[作|つく]れませんでしたが、できあがった[器|うつわ]には[愛着|あいちゃく]があります。 :: 처음 도예를 체험했을 때 모양을 잘 만들지 못했지만 완성된 그릇에는 애착이 있어요. :: I could not shape the clay well at my first pottery class, but I am attached to the bowl I made.
+[朝|あさ]の[市場|いちば]は[活気|かっき]があって、[店|みせ]の[人|ひと]に[料理|りょうり]の[仕方|しかた]を[聞|き]きながら[買|か]い[物|もの]をするのが[楽|たの]しいです。 :: 아침 시장은 활기가 있어서 가게 사람에게 조리법을 물으며 장을 보는 것이 즐거워요. :: The morning market is lively, and I enjoy shopping while asking the stallholders how to cook their produce.
+[仕事|しごと]が[早|はや]く[終|お]わったので[夕食|ゆうしょく]までに[少|すこ]し[時間|じかん]ができて、[読|よ]みかけの[小説|しょうせつ]を[進|すす]めることができました。 :: 일이 일찍 끝나 저녁 전까지 시간이 조금 생겨서 읽던 소설을 더 읽을 수 있었어요. :: Finishing work early gave me a little time before dinner to continue the novel I was reading.
+[家|いえ]の[近|ちか]くにできた[小|ちい]さな[公園|こうえん]には、[雨|あめ]の[日|ひ]でも[休|やす]めるように[屋根|やね]のあるベンチが[置|お]かれています。 :: 집 근처에 생긴 작은 공원에는 비 오는 날에도 쉴 수 있도록 지붕 있는 벤치가 놓여 있어요. :: The new little park near my home has covered benches where people can rest even on rainy days.
+[間違|まちが]えた[言葉|ことば]をすぐに[消|け]すのではなく、[正|ただ]しい[形|かたち]と[比|くら]べてから[打|う]ち[直|なお]すと[違|ちが]いがよく[分|わ]かります。 :: 틀린 단어를 바로 지우기보다 올바른 형태와 비교한 뒤 다시 입력하면 차이를 잘 알 수 있어요. :: Comparing a mistyped word with the correct form before retyping helps me see the difference clearly.
+[週|しゅう]に[一度|いちど]、[冷蔵庫|れいぞうこ]の[中|なか]を[確認|かくにん]してから[献立|こんだて]を[考|かんが]えると、[残|のこ]った[食材|しょくざい]を[使|つか]い[切|き]りやすくなります。 :: 일주일에 한 번 냉장고 안을 확인하고 식단을 생각하면 남은 식재료를 다 쓰기 쉬워져요. :: Checking the fridge once a week before planning meals makes it easier to use up leftover ingredients.
+[旅行|りょこう]の[最終日|さいしゅうび]は[予定|よてい]を[詰|つ]め[込|こ]まずに、[気|き]に[入|い]った[通|とお]りをもう[一度|いちど]ゆっくり[歩|ある]くことにしています。 :: 여행 마지막 날에는 일정을 꽉 채우지 않고 마음에 든 거리를 한 번 더 천천히 걷기로 해요. :: On the last day of a trip, I leave my schedule open and take another slow walk along a street I liked.
+[雨音|あまおと]が[聞|き]こえる[静|しず]かな[夜|よる]は、[画面|がめん]を[見|み]る[時間|じかん]を[少|すこ]し[減|へ]らして[紙|かみ]の[本|ほん]を[読|よ]みたくなります。 :: 빗소리가 들리는 조용한 밤에는 화면을 보는 시간을 조금 줄이고 종이책을 읽고 싶어져요. :: On quiet nights filled with the sound of rain, I feel like spending less time on screens and reading a paper book.
+[駅前|えきまえ]の[時計|とけい]が[止|と]まっていたことに[気|き]づかず、[約束|やくそく]の[時間|じかん]までまだ[余裕|よゆう]があると[思|おも]っていました。 :: 역 앞 시계가 멈춘 것을 모르고 약속 시간까지 아직 여유가 있다고 생각하고 있었어요. :: I did not notice that the station clock had stopped and thought I still had plenty of time before our meeting.
+[友達|ともだち]から[借|か]りた[漫画|まんが]を[読|よ]み[終|お]えたので、[次|つぎ]に[会|あ]ったときに[感想|かんそう]を[伝|つた]えて[返|かえ]そうと[思|おも]っています。 :: 친구에게 빌린 만화를 다 읽어서 다음에 만날 때 감상을 이야기하고 돌려주려 해요. :: I finished the manga I borrowed from a friend and plan to share my thoughts and return it when we next meet.
+[新|あたら]しい[店|みせ]に[入|はい]るのは[少|すこ]し[緊張|きんちょう]しますが、[店員|てんいん]が[笑顔|えがお]で[迎|むか]えてくれると[気持|きも]ちが[楽|らく]になります。 :: 새 가게에 들어가는 것은 조금 긴장되지만 직원이 웃으며 맞아 주면 마음이 편해져요. :: Entering a new shop makes me a little nervous, but a smiling welcome from the staff puts me at ease.
+[一週間|いっしゅうかん]の[終|お]わりに[手帳|てちょう]を[見返|みかえ]すと、[何|なに]もなかったと[思|おも]った[日|ひ]にも[小|ちい]さな[出来事|できごと]があったと[気|き]づきます。 :: 한 주가 끝날 때 수첩을 돌아보면 아무 일 없었다고 생각한 날에도 작은 일이 있었다는 것을 깨달아요. :: Looking back through my planner at the end of the week reminds me that even uneventful days held small moments.
+[電車|でんしゃ]が[遅|おく]れているという[案内|あんない]を[聞|き]いたので、[先|さき]に[友達|ともだち]へ[連絡|れんらく]してから[別|べつ]の[行|い]き[方|かた]を[調|しら]べました。 :: 전철이 지연된다는 안내를 들어서 먼저 친구에게 연락한 뒤 다른 가는 방법을 알아봤어요. :: After hearing that the train was delayed, I contacted my friend first and then looked for another route.
+[小|ちい]さな[鉢植|はちう]えを[窓辺|まどべ]に[置|お]いてから、[朝|あさ]に[葉|は]の[様子|ようす]を[確|たし]かめるのが[毎日|まいにち]の[習慣|しゅうかん]になりました。 :: 작은 화분을 창가에 놓은 후 아침마다 잎의 상태를 확인하는 것이 일상 습관이 되었어요. :: Since putting a small plant on the windowsill, checking its leaves each morning has become a daily habit.
+[初|はじ]めて[行|い]く[場所|ばしょ]には[少|すこ]し[早|はや]めに[向|む]かうと、[道|みち]を[確|たし]かめたり[周|まわ]りの[景色|けしき]を[楽|たの]しんだりする[余裕|よゆう]が[生|う]まれます。 :: 처음 가는 곳에는 조금 일찍 출발하면 길을 확인하거나 주변 풍경을 즐길 여유가 생겨요. :: Heading to an unfamiliar place a little early leaves time to check the route and enjoy the surroundings.
+[家族|かぞく]で[夕食|ゆうしょく]を[作|つく]るときは、[私|わたし]が[野菜|やさい]を[切|き]り、[父|ちち]が[鍋|なべ]を[見|み]て、[弟|おとうと]が[食器|しょっき]を[並|なら]べます。 :: 가족이 함께 저녁을 만들 때는 제가 채소를 썰고 아버지가 냄비를 보고 남동생이 식기를 놓아요. :: When we cook dinner as a family, I chop vegetables, my father watches the pot, and my brother sets the table.
+[日差|ひざ]しが[強|つよ]くなったのでカーテンを[少|すこ]し[閉|し]めると、[部屋|へや]の[中|なか]が[落|お]ち[着|つ]いた[柔|やわ]らかい[明|あか]るさになりました。 :: 햇살이 강해져 커튼을 조금 닫으니 방 안이 차분하고 부드러운 밝기가 되었어요. :: Closing the curtains a little against the strong sunlight gave the room a calmer, softer light.
+[毎晩|まいばん][明日|あした]の[持|も]ち[物|もの]を[玄関|げんかん]に[揃|そろ]えておくようにしたら、[朝|あさ]に[忘|わす]れ[物|もの]をして[慌|あわ]てることが[減|へ]りました。 :: 매일 밤 내일 챙길 물건을 현관에 모아 두기 시작하니 아침에 물건을 빠뜨려 당황하는 일이 줄었어요. :: Since I began gathering tomorrow's things by the door each evening, I have had fewer frantic mornings over forgotten items.
+[苦手|にがて]だった[文字|もじ]が[一度|いちど]で[入力|にゅうりょく]できると、[短|みじか]い[練習|れんしゅう]でも[続|つづ]けてきたことに[意味|いみ]があったと[感|かん]じます。 :: 어려워하던 글자를 한 번에 입력하면 짧은 연습이라도 계속해 온 의미가 있었다고 느껴요. :: Typing a once-difficult character correctly at the first try makes even short, steady practice feel worthwhile.
 `,
 };
 
